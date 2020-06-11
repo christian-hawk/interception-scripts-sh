@@ -50,10 +50,13 @@ function ctrl_c()
 
 		else
 			date -d now 
-			sudo cp /home/christian/gluu-repos/oxAuthRepo/Server/integrations/forgot_password/*.py /opt/gluu-server/custom/.
+			echo "Working on local server..."
+			echo "updating PY files on running gluu-server..."
+			sudo cp $PY_WORKING $PY_GLUU_CHMOD
 			echo "Files *.py updated on gluu-server chmod"
 			sleep 2s
-			sudo cp /home/christian/gluu-repos/oxAuthRepo/Server/src/main/webapp/auth/forgot_password/*.xhtml /opt/gluu-server/opt/gluu/jetty/oxauth/custom/pages/auth/forgot_password/.
+			echo "updating XHTML files on gluu-server chmod..."
+			sudo cp $XHTML_WORKING $XHTML_GLUU_CHMOD
 			echo "Files *.xhtml updated on gluu-server chmod"
 			sleep 1
 		fi
